@@ -1,0 +1,23 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "src/assets/uploads"
+public_folder: "/uploads"
+
+site_url: https://nomos-journal.netlify.app
+
+collections:
+  - name: "essays"
+    label: "Essays"
+    folder: "content/essays"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: title
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Dek (subtitle)", name: "dek", widget: "string" }
+      - { label: "Category tag", name: "tag", widget: "string", default: "Essay —" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "SEO description", name: "description", widget: "text" }
+      - { label: "Body", name: "body", widget: "markdown" }

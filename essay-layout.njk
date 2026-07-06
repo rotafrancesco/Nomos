@@ -1,0 +1,26 @@
+{% include "head.njk" %}
+<body>
+
+<div class="essay-page-header wrap">
+  <a class="back-link" href="/">&larr; Nomos</a>
+</div>
+
+<main class="wrap essay-page-main">
+  <article class="essay-full" style="padding-top:12px;">
+    <span class="tag">{{ tag }}</span>
+    <h2>{{ title }}</h2>
+    <p class="dek">{{ dek }}</p>
+    <p class="byline">{{ byline | default("Francesco — Contributor") }}</p>
+
+    <div class="body">
+      {{ content | safe }}
+    </div>
+  </article>
+</main>
+
+<footer class="essay-footer">
+  © 2026 Nomos. All rights reserved.
+</footer>
+
+</body>
+</html>
