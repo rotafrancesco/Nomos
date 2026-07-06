@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nomos — A Journal of Order and Its Discontents</title>
+<meta name="description" content="Nomos is a journal on the making and unmaking of legitimate order: essays and briefs on the Horn of Africa, international legitimacy, and the non-state actors who contest it.">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png">
+
+<!-- Open Graph / social preview -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Nomos — A Journal of Order and Its Discontents">
+<meta property="og:description" content="On the making, and unmaking, of legitimate order: essays and briefs on the Horn of Africa, international legitimacy, and the actors who contest it.">
+<meta property="og:image" content="og-image.png">
+<meta property="og:locale" content="en_GB">
+
+<!-- Twitter card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nomos — A Journal of Order and Its Discontents">
+<meta name="twitter:description" content="On the making, and unmaking, of legitimate order.">
+<meta name="twitter:image" content="og-image.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #E7E3D6;
+    --paper-deep: #DAD5C4;
+    --ink: #12182A;
+    --ink-soft: #2B3550;
+    --slate: #5B6478;
+    --rule: #B8AF98;
+    --rule-soft: #CFC8B4;
+    --oxblood: #7A2A2A;
+    --max: 1120px;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ -webkit-text-size-adjust: 100%; }
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif;
+    line-height:1.6;
+  }
+
+  a{ color:inherit; text-decoration:none; }
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--oxblood);
+    outline-offset:3px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ transition:none !important; animation:none !important; }
+  }
+
+  .wrap{
+    max-width:var(--max);
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  /* ---------- Top meta bar ---------- */
+  .topbar{
+    border-bottom:1px solid var(--rule);
+  }
+  .topbar .wrap{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:6px;
+    padding-top:14px;
+    padding-bottom:14px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--slate);
+  }
+  .topbar span{ white-space:nowrap; }
+
+  /* ---------- Masthead ---------- */
+  .masthead{
+    padding:44px 0 0;
+    text-align:center;
+  }
+  .masthead .kicker{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.7rem;
+    letter-spacing:0.32em;
+    text-transform:uppercase;
+    color:var(--oxblood);
+    margin:0 0 18px;
+  }
+  .masthead h1{
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    font-size:clamp(3.2rem, 9vw, 6rem);
+    letter-spacing:-0.01em;
+    margin:0;
+    color:var(--ink);
+  }
+  .masthead h1 em{
+    font-style:italic;
+    font-weight:500;
+    color:var(--ink-soft);
+  }
+  .masthead .tagline{
+    font-family:'Source Serif 4', serif;
+    font-style:italic;
+    font-size:1.05rem;
+    color:var(--ink-soft);
+    margin:12px 0 0;
+  }
+
+  /* Survey-line signature divider: a boundary line with tick marks,
+     standing in for the founding "division of land" the word nomos names */
+  .survey-line{
+    display:block;
+    width:100%;
+    height:22px;
+    margin:26px 0 0;
+  }
+  .survey-line line, .survey-line path{
+    stroke:var(--ink-soft);
+    stroke-width:1;
+  }
+
+  /* ---------- Nav ---------- */
+  nav.primary{
+    border-top:1px solid var(--rule);
+    border-bottom:3px double var(--ink-soft);
+    background:var(--paper);
+  }
+  nav.primary .wrap{
+    display:flex;
+    justify-content:center;
+    gap:36px;
+    padding:14px 28px;
+    flex-wrap:wrap;
+  }
+  nav.primary a{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.76rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--ink);
+    padding-bottom:4px;
+    border-bottom:1px solid transparent;
+    transition:border-color 0.15s ease, color 0.15s ease;
+  }
+  nav.primary a:hover{
+    border-bottom-color:var(--oxblood);
+    color:var(--oxblood);
+  }
+
+  /* ---------- Layout grid ---------- */
+  main{ padding:52px 0 0; }
+  .layout{
+    display:grid;
+    grid-template-columns: 2.1fr 1fr;
+    gap:56px;
+    align-items:start;
+  }
+  @media (max-width: 860px){
+    .layout{ grid-template-columns: 1fr; gap:44px; }
+  }
+
+  /* ---------- Lead feature ---------- */
+  .tag{
+    display:inline-block;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.7rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--oxblood);
+    border:1px solid var(--oxblood);
+    padding:3px 9px;
+    margin-bottom:16px;
+  }
+  .lead h2{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:clamp(1.9rem, 4vw, 2.7rem);
+    line-height:1.12;
+    margin:0 0 14px;
+  }
+  .lead .dek{
+    font-style:italic;
+    color:var(--ink-soft);
+    font-size:1.12rem;
+    margin:0 0 18px;
+    max-width:52ch;
+  }
+  .byline{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--slate);
+    margin-bottom:26px;
+    padding-bottom:22px;
+    border-bottom:1px solid var(--rule-soft);
+  }
+  .lead .body p{
+    font-size:1.06rem;
+    margin:0 0 20px;
+  }
+  .lead .body p:first-of-type::first-letter{
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    font-size:4.6rem;
+    line-height:0.78;
+    float:left;
+    padding:6px 10px 0 0;
+    color:var(--oxblood);
+  }
+  .note{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    color:var(--slate);
+    border-left:2px solid var(--rule);
+    padding-left:12px;
+    margin-top:30px;
+  }
+
+  /* ---------- Essay teaser (homepage) ---------- */
+  .essay-teaser{
+    max-width:74ch;
+    padding:36px 0 8px;
+  }
+  .essay-teaser h2{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:clamp(1.7rem, 3.6vw, 2.3rem);
+    line-height:1.16;
+    margin:0 0 12px;
+  }
+  .essay-teaser h2 a{
+    border-bottom:1px solid transparent;
+    transition:color 0.15s ease, border-color 0.15s ease;
+  }
+  .essay-teaser h2 a:hover{
+    color:var(--oxblood);
+    border-bottom-color:var(--oxblood);
+  }
+  .essay-teaser .dek{
+    font-style:italic;
+    color:var(--ink-soft);
+    font-size:1.05rem;
+    margin:0 0 14px;
+  }
+  .read-more{
+    display:inline-block;
+    margin-top:6px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.74rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--oxblood);
+    border-bottom:1px solid var(--oxblood);
+    padding-bottom:2px;
+  }
+  .read-more:hover{ opacity:0.75; }
+
+  /* ---------- Full essay ---------- */
+  .essay-full{
+    max-width:74ch;
+    margin:0 auto;
+  }
+  .essay-full .dek{ max-width:none; }
+  .essay-full .body h3{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-style:italic;
+    font-size:1.4rem;
+    color:var(--ink-soft);
+    margin:40px 0 16px;
+  }
+  .essay-full blockquote{
+    margin:32px 0;
+    padding:20px 26px;
+    background:var(--paper-deep);
+    border-left:3px solid var(--oxblood);
+    font-style:italic;
+    font-size:1.05rem;
+    color:var(--ink-soft);
+  }
+  .essay-full blockquote cite{
+    display:block;
+    margin-top:10px;
+    font-family:'IBM Plex Mono', monospace;
+    font-style:normal;
+    font-size:0.72rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--slate);
+  }
+  .bibliography{
+    margin-top:48px;
+    padding-top:24px;
+    border-top:1px solid var(--rule-soft);
+  }
+  .bibliography h3{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    font-style:normal !important;
+    color:var(--ink) !important;
+    margin:0 0 16px !important;
+  }
+  .bibliography ul{
+    list-style:none;
+    margin:0;
+    padding:0;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.8rem;
+    color:var(--slate);
+    line-height:1.7;
+  }
+  .bibliography li{
+    padding-left:1.6em;
+    text-indent:-1.6em;
+    margin-bottom:10px;
+  }
+
+  /* ---------- Sidebar ---------- */
+  aside{
+    border-left:1px solid var(--rule);
+    padding-left:36px;
+  }
+  @media (max-width: 860px){
+    aside{ border-left:none; border-top:1px solid var(--rule); padding-left:0; padding-top:36px; }
+  }
+  aside h3{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.74rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--ink);
+    margin:0 0 20px;
+    padding-bottom:10px;
+    border-bottom:1px solid var(--rule-soft);
+  }
+  .brief-item{
+    padding:16px 0;
+    border-bottom:1px solid var(--rule-soft);
+  }
+  .brief-item:last-child{ border-bottom:none; }
+  .brief-item .cat{
+    display:block;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.66rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--oxblood);
+    margin-bottom:6px;
+  }
+  .brief-item h4{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:1.08rem;
+    margin:0 0 6px;
+    line-height:1.3;
+  }
+  .brief-item p{
+    font-size:0.9rem;
+    color:var(--ink-soft);
+    margin:0;
+  }
+
+  /* ---------- Section: forthcoming briefs ---------- */
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    border-top:3px double var(--ink-soft);
+    border-bottom:1px solid var(--rule);
+    padding:34px 0 12px;
+    margin-top:56px;
+  }
+  .section-head h3{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:1.5rem;
+    margin:0;
+  }
+  .section-head span{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.7rem;
+    color:var(--slate);
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+  }
+
+  .cards{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:32px;
+    padding:32px 0 12px;
+  }
+  @media (max-width: 860px){
+    .cards{ grid-template-columns:1fr; }
+  }
+  .card{
+    background:var(--paper-deep);
+    padding:26px 22px;
+    border-top:3px solid var(--ink-soft);
+  }
+  .card .cat{
+    display:block;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.66rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--oxblood);
+    margin-bottom:10px;
+  }
+  .card h4{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:1.18rem;
+    margin:0 0 10px;
+    line-height:1.28;
+  }
+  .card p{
+    font-size:0.92rem;
+    color:var(--ink-soft);
+    margin:0;
+  }
+
+  /* ---------- Colophon / footer ---------- */
+  footer{
+    margin-top:70px;
+    border-top:3px double var(--ink-soft);
+    background:var(--ink);
+    color:var(--paper);
+  }
+  footer .wrap{
+    padding:44px 28px 34px;
+    display:grid;
+    grid-template-columns:1.4fr 1fr;
+    gap:44px;
+  }
+  @media (max-width: 860px){
+    footer .wrap{ grid-template-columns:1fr; }
+  }
+  footer h3{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.7rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:#B9AE8F;
+    margin:0 0 14px;
+  }
+  footer p{
+    font-size:0.94rem;
+    color:#CFCABB;
+    margin:0 0 14px;
+    max-width:60ch;
+  }
+  footer .colophon-word{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    color:var(--paper);
+  }
+  .subscribe{
+    display:flex;
+    gap:0;
+    max-width:360px;
+    margin-top:6px;
+  }
+  .subscribe input{
+    flex:1;
+    background:transparent;
+    border:1px solid #55607C;
+    border-right:none;
+    padding:10px 12px;
+    color:var(--paper);
+    font-family:'Source Serif 4', serif;
+    font-size:0.9rem;
+  }
+  .subscribe input::placeholder{ color:#8A93AC; }
+  .subscribe button{
+    background:var(--oxblood);
+    border:1px solid var(--oxblood);
+    color:var(--paper);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.7rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    padding:0 18px;
+    cursor:pointer;
+  }
+  .fine{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.68rem;
+    color:#8A93AC;
+    border-top:1px solid #333E5C;
+    padding:18px 28px;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span>Vol. I — No. 1</span>
+    <span>Founded 2026</span>
+    <span id="today"></span>
+  </div>
+</div>
+
+<header class="masthead wrap">
+  <p class="kicker">A Journal of Order and Its Discontents</p>
+  <h1>N<em>o</em>mos</h1>
+  <p class="tagline">On the making, and unmaking, of legitimate order</p>
+  <svg class="survey-line" viewBox="0 0 1120 22" preserveAspectRatio="none" aria-hidden="true">
+    <line x1="0" y1="11" x2="1120" y2="11"></line>
+    <line x1="0" y1="4" x2="0" y2="18"></line>
+    <line x1="140" y1="6" x2="140" y2="16"></line>
+    <line x1="280" y1="4" x2="280" y2="18"></line>
+    <line x1="420" y1="6" x2="420" y2="16"></line>
+    <line x1="560" y1="2" x2="560" y2="20"></line>
+    <line x1="700" y1="6" x2="700" y2="16"></line>
+    <line x1="840" y1="4" x2="840" y2="18"></line>
+    <line x1="980" y1="6" x2="980" y2="16"></line>
+    <line x1="1120" y1="4" x2="1120" y2="18"></line>
+  </svg>
+</header>
+
+<nav class="primary">
+  <div class="wrap">
+    <a href="#briefs">Briefs</a>
+    <a href="#essays">Essays</a>
+    <a href="#archive">Archive</a>
+    <a href="#about">About</a>
+    <a href="#colophon">On the Name</a>
+  </div>
+</nav>
+
+<main class="wrap">
+  <div class="layout">
+    <article class="lead">
+      <span class="tag">Editor's Note</span>
+      <h2>First Dispatch: Why Nomos</h2>
+      <p class="dek">An introduction to this journal, and to the concept it borrows its name from.</p>
+      <p class="byline">Francesco — Editor</p>
+      <div class="body">
+        <p>Every order of things rests on a prior act of division: a line drawn across land or law that decides who counts, and by what right. The Greeks called that founding act <em>nomos</em> — not merely statute, but the deeper settlement from which statute becomes possible. This journal takes its name from that idea, and from the more particular use Carl Schmitt made of it: the claim that international order is not a neutral given, but a historically specific arrangement, drawn up by particular powers, and open to contest by those it excludes.</p>
+        <p>That contest is the subject matter here. Dispatches and essays on the Horn of Africa, on the Middle East, and on the actors, state and non-state alike, who test the limits of who gets to claim legitimate authority. The approach is analytical rather than advocative: named sources, grounded political economy, and an even hand toward positions the writer may not share.</p>
+        <p>This is a first placeholder entry. Real dispatches will replace it as the journal finds its footing.</p>
+      </div>
+      <p class="note">Editorial note — this homepage is a working draft. Section content below is placeholder text, to be replaced with real dispatches.</p>
+    </article>
+
+    <aside>
+      <h3>In Brief</h3>
+      <div class="brief-item">
+        <span class="cat">Horn of Africa</span>
+        <h4>Field notes and political economy</h4>
+        <p>Ongoing coverage of governance, conflict, and non-state authority in the region. First entries forthcoming.</p>
+      </div>
+      <div class="brief-item">
+        <span class="cat">International Order</span>
+        <h4>Legitimacy and its critics</h4>
+        <p>Essays on the normative foundations of international recognition, and who is left to argue over them.</p>
+      </div>
+      <div class="brief-item">
+        <span class="cat">Non-State Actors</span>
+        <h4>Governance without a state</h4>
+        <p>Case work on armed and political actors operating at the edge of, or in defiance of, the state system.</p>
+      </div>
+      <div class="brief-item">
+        <span class="cat">Archive</span>
+        <h4>Nothing filed yet</h4>
+        <p>The archive will hold past dispatches once the journal is underway.</p>
+      </div>
+    </aside>
+  </div>
+
+  <div class="section-head" id="briefs">
+    <h3>Forthcoming Briefs</h3>
+    <span>Placeholder — three slots</span>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <span class="cat">Draft — Somalia</span>
+      <h4>Shadow governance and the price of order</h4>
+      <p>A brief slot reserved for reporting on parallel authority structures. Text to follow.</p>
+    </div>
+    <div class="card">
+      <span class="cat">Draft — Red Sea</span>
+      <h4>The Houthis and the law of the sea</h4>
+      <p>A brief slot reserved for analysis of maritime disruption as political claim. Text to follow.</p>
+    </div>
+    <div class="card">
+      <span class="cat">Draft — Essay</span>
+      <h4>Who gets to recognise a state</h4>
+      <p>A brief slot reserved for a longer essay on recognition and its politics. Text to follow.</p>
+    </div>
+  </div>
+
+  <div class="section-head" id="essays">
+    <h3>Essays</h3>
+    <span>Vol. I — Essays</span>
+  </div>
+
+  <article class="essay-teaser">
+    <span class="tag">Essay — Culture &amp; Power</span>
+    <h2><a href="essay-culture-and-power.html">Culture Is Not the Enemy, Power Is</a></h2>
+    <p class="dek">Rethinking the myth of the "clash of values"</p>
+    <p class="byline">Francesco — Contributor</p>
+    <a class="read-more" href="essay-culture-and-power.html">Read the full essay &rarr;</a>
+  </article>
+
+  <article class="essay-teaser" style="border-top:1px solid var(--rule-soft); margin-top:8px; padding-top:32px;">
+    <span class="tag">Essay — Political Economy</span>
+    <h2><a href="essay-congo-conflict-minerals.html">When Peace Costs Too Much</a></h2>
+    <p class="dek">On the manufactured stability of Congo's forever war</p>
+    <p class="byline">Francesco — Contributor</p>
+    <a class="read-more" href="essay-congo-conflict-minerals.html">Read the full essay &rarr;</a>
+  </article>
+</main>
+
+<footer id="colophon">
+  <div class="wrap">
+    <div>
+      <h3>On the Name</h3>
+      <p><span class="colophon-word">Nomos</span> (νόμος): in Greek thought, law or convention as against nature; in Carl Schmitt's usage, the founding division of the earth from which legal and political order follows. This journal borrows the word to mark its subject: not just events, but the settlements beneath them.</p>
+      <p>Editorial correspondence and pitches by request.</p>
+    </div>
+    <div>
+      <h3>Notify on Publication</h3>
+      <div class="subscribe">
+        <input type="email" placeholder="you@email.com" aria-label="Email address">
+        <button type="button">Notify Me</button>
+      </div>
+      <p style="margin-top:14px; font-size:0.8rem;">Placeholder form — not yet connected.</p>
+    </div>
+  </div>
+  <div class="fine">
+    <span>© 2026 Nomos. All rights reserved.</span>
+    <span>A working draft, built to be replaced.</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('today').textContent = new Date().toLocaleDateString('en-GB', { day:'numeric', month:'long', year:'numeric' });
+</script>
+
+</body>
+</html>
